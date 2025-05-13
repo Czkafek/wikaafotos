@@ -38,6 +38,9 @@ body {
     backdrop-filter: blur(10px);
     opacity: 0.8;
 }
+.section:active {
+    opacity: 0.6;
+}
 .section p {
     max-width: 900px;
     width: 100%;
@@ -45,7 +48,8 @@ body {
     font-size: 32px;
     font-weight: 700;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #404040;
-    opacity: 0.8;
+    /*color: #404040;*/
+    color: #222222;
     margin: 0px;
+    opacity: 0.8;
 }
