@@ -1,0 +1,67 @@
+body {
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.backgroundContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.base {
+  z-index: 0;
+  opacity: 1;
+}
+
+.overlay {
+  z-index: 1;
+  opacity: 1;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+
+.textContainer {
+  padding: 16px 32px;  
+  color: #fff;
+}
+h1 {
+  font-size: 8vw;
+  margin: 0px;
+  margin-bottom: 24px;
+  cursor:default;
+}
+p {
+  font-size: 20px;
+  margin: 0px;
+  margin-bottom: 32px;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  width: max-content;
+}
+p:hover {
+  opacity: 0.8;
+}
+p:active {
+  opacity: 0.6;
+}
+.active {
+  font-weight: 500;
+}
