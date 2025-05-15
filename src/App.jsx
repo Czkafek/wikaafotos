@@ -7,7 +7,8 @@ import img4 from './assets/backgroundImgs/img4.jpg'
 import img5 from './assets/backgroundImgs/img5.jpg'
 
 function App() {
-
+  
+  // Photo Background Logic
   const images = [img1, img2, img3, img4, img5];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,6 +34,30 @@ function App() {
   }
 
 
+  // Menu Logic
+  const [isShrunk, setIsShrunk] = useState(false);
+  const [currentPage, setCurrentPage] = useState("Strona główna");
+
+  const handleClick = (page) => {
+    if(page === currentPage && currentPage === "Strona główna") return true; 
+    if(page !== currentPage) {
+      if(currentPage === "Strona główna") shrinkMenu();
+      else if (page === "Strona główna") expandMenu();
+      setCurrentPage(page);
+    }
+  }
+
+  const shrinkMenu = () => {
+    console.log("shrinkMenu");
+    setIsShrunk(true);
+  }
+
+  const expandMenu = () => {
+    console.log("expandMenu");
+    setIsShrunk(false);
+  }
+
+
   return (
     <>
       <div className='backgroundContainer'>
@@ -43,12 +68,12 @@ function App() {
               style={{backgroundImage: `url(${images[currentIndex]})`}}
         ></div>
       </div>
-      <div className='textContainer'>
+      <div className={`textContainer ${isShrunk ? "shrunk" : "full"}`}>
         <h1>Wikaafotos</h1>
-        <p className='active'>Strona główna</p>
-        <p>Galeria</p>
-        <p>O mnie</p>
-        <p>Kontakt</p>
+        <p className={`${currentPage === "Strona główna" ? "active" : ""}`} onClick={() => handleClick("Strona główna")}>Strona główna</p>
+        <p className={`${currentPage === "Galeria" ? "active" : ""}`} onClick={() => handleClick("Galeria")}>Galeria</p>
+        <p className={`${currentPage === "O mnie" ? "active" : ""}`} onClick={() => handleClick("O mnie")}>O mnie</p>
+        <p className={`${currentPage === "Kontakt" ? "active" : ""}`} onClick={() => handleClick("Kontakt")}>Kontakt</p>
       </div>
     </>
   )

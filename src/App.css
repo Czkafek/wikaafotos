@@ -42,26 +42,42 @@ body {
   padding: 16px 32px;  
   color: #fff;
 }
-h1 {
-  font-size: 8vw;
+.textContainer h1 {
   margin: 0px;
   margin-bottom: 24px;
   cursor:default;
+  transition: font-size 0.2s;
 }
-p {
-  font-size: 20px;
+.textContainer p {
   margin: 0px;
-  margin-bottom: 32px;
   transition: opacity 0.2s;
   cursor: pointer;
   width: max-content;
+  transition: font-size 0.2s, margin 0.2s;
 }
-p:hover {
+.textContainer p:hover {
   opacity: 0.8;
 }
-p:active {
+.textContainer p:active {
   opacity: 0.6;
 }
+
+.full h1 {
+  font-size: 8vw;
+}
+.full p {
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+
 .active {
   font-weight: 500;
+}
+
+.shrunk h1 {
+  font-size: 32px;
+}
+.shrunk p {
+  font-size: 16px;
+  margin-bottom: 16px;
 }
