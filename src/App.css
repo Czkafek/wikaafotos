@@ -1,8 +1,9 @@
 body {
-  overflow: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.hidden {
+  overflow: hidden;
+}
 .backgroundContainer {
   position: fixed;
   top: 0;
@@ -11,6 +12,8 @@ body {
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
 }
 .slide {
   position: absolute;
@@ -40,20 +43,23 @@ body {
 
 .textContainer {
   padding: 16px 32px;  
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 .textContainer h1 {
   margin: 0px;
   margin-bottom: 24px;
   cursor:default;
-  transition: font-size 0.2s;
+  transition: font-size 0.2s, color 0.2s;
 }
 .textContainer p {
   margin: 0px;
   transition: opacity 0.2s;
   cursor: pointer;
   width: max-content;
-  transition: font-size 0.2s, margin 0.2s;
+  transition: font-size 0.2s, margin 0.2s, color 0.2s;
 }
 .textContainer p:hover {
   opacity: 0.8;
@@ -64,10 +70,12 @@ body {
 
 .full h1 {
   font-size: 8vw;
+  color: #fff;
 }
 .full p {
   font-size: 20px;
   margin-bottom: 32px;
+  color: #fff;
 }
 
 .active {
@@ -76,8 +84,75 @@ body {
 
 .shrunk h1 {
   font-size: 32px;
+  color: #000000;
 }
 .shrunk p {
   font-size: 16px;
   margin-bottom: 16px;
+  color: #000000;
+}
+
+
+/* ------------------------------------------------------- */
+/* Section */
+
+.sectionContainer {
+  padding: 16px 32px 16px 268px;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.hide {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+.hideDisplay {
+  display: none;
+}
+
+.sectionTitle {
+  margin: 0px;
+  font-size: 128px;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 530px);
+  column-gap: 32px;
+  row-gap: 32px;
+}
+.galleryGrid.dimOthers .galleryOption img {
+  filter: brightness(50%);
+}
+.galleryGrid.dimOthers .galleryOption:hover img {
+  filter: brightness(100%);
+}
+
+.galleryOption {
+  transition: transform 0.2s, opacity 0.2s;
+}
+.galleryOption img {
+  transition: filter 0.2s;
+}
+.galleryOption:hover {
+  transform: scale(1.05);
+}
+.galleryOption:active {
+  opacity: 0.8;
+}
+.galleryOption:active:after {
+  opacity: 1 ;
+}
+
+.galleryOption img {
+  width: 100%;
+  height: 804px;
+  object-fit: cover;
+}
+
+.galleryOption p {
+  font-size: 20px;
+  margin: 8px 0px 0px 0px;
 }
