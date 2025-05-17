@@ -48,12 +48,14 @@ function App() {
     setCurrentPage(page);
     setTimeout(() => {
       setIsShrunk(true);
-    }, 100)
+    }, 200)
   }
 
   const expandMenu = (page) => {
-    setIsShrunk(false);
-    setCurrentPage(page);
+    setTimeout(() => {
+      setIsShrunk(false);
+      setCurrentPage(page);
+    }, 100)
   }
 
   useEffect(() => {
@@ -130,6 +132,9 @@ function App() {
       <div className={`sectionContainer ${currentPage === "Kontakt" ? "" : "hide"}`}>
         <h1 className='sectionTitle'>Kontakt</h1>
       </div>
+      {isShrunk && <footer>
+        <p>Wikaafotos © 2025. Wszelkie prawa zastrzeżone</p>
+      </footer>}
     </>
   )
 }

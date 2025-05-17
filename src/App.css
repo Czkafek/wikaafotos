@@ -1,5 +1,12 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0px;
+  min-height: 100vh;
+}
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 .hidden {
   overflow: hidden;
@@ -100,7 +107,7 @@ body {
 /* Section */
 
 .sectionContainer {
-  padding: 16px 32px 16px 268px;
+  padding: 16px 32px 80px 268px;
   opacity: 1;
   transition: opacity 0.2s;
   z-index: 100;
@@ -159,4 +166,16 @@ body {
 .galleryOption p {
   font-size: 20px;
   margin: 8px 0px 0px 0px;
+}
+
+
+footer {
+  width: 100%;
+  padding: 16px 0px;
+  margin-top: 64px;
+}
+footer p {
+  font-size: 14px;
+  margin: 0px;
+  text-align: center;
 }
