@@ -39,18 +39,21 @@ function App() {
 
   const handleClick = (page) => {
     if(page === currentPage) return true; 
-    if(currentPage === "Strona główna") shrinkMenu();
-    else if (page === "Strona główna") expandMenu();
+    if(currentPage === "Strona główna") shrinkMenu(page);
+    else if (page === "Strona główna") expandMenu(page);
+    else setCurrentPage(page);
+  }
 
+  const shrinkMenu = (page) => {
     setCurrentPage(page);
+    setTimeout(() => {
+      setIsShrunk(true);
+    }, 100)
   }
 
-  const shrinkMenu = () => {
-    setIsShrunk(true);
-  }
-
-  const expandMenu = () => {
+  const expandMenu = (page) => {
     setIsShrunk(false);
+    setCurrentPage(page);
   }
 
   useEffect(() => {
@@ -77,7 +80,7 @@ function App() {
 
   return (
     <>
-      <div className={`backgroundContainer ${isShrunk ? "fade" : ""}`}>
+      <div className={`backgroundContainer ${isShrunk ? "fade backgroundIndex" : ""}`}>
         <div className="slide base"
               style={{backgroundImage: `url(${images[nextIndex]})`}}
         ></div>
@@ -86,7 +89,7 @@ function App() {
         ></div>
       </div>
       <div className={`textContainer ${isShrunk ? "shrunk" : "full"}`}>
-        <h1>Photographer</h1>
+        <h1>Wikaafotos</h1>
         <p className={`${currentPage === "Strona główna" ? "active" : ""}`} onClick={() => handleClick("Strona główna")}>Strona główna</p>
         <p className={`${currentPage === "Galeria" ? "active" : ""}`} onClick={() => handleClick("Galeria")}>Galeria</p>
         <p className={`${currentPage === "O mnie" ? "active" : ""}`} onClick={() => handleClick("O mnie")}>O mnie</p>
