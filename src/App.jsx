@@ -48,7 +48,7 @@ function App() {
     setCurrentPage(page);
     setTimeout(() => {
       setIsShrunk(true);
-    }, 200)
+    }, 300)
   }
 
   const expandMenu = (page) => {

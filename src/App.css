@@ -116,7 +116,7 @@ body {
   opacity: 0;
   position: absolute;
   pointer-events: none;
-  height: 0;
+  height: 70px;
   overflow: hidden;
 }
 .hideDisplay {
