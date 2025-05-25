@@ -102,27 +102,27 @@ function App() {
         <div className={`galleryGrid ${isGalleryHovered ? "dimOthers" : ""}`}>
           <div className='galleryOption' onMouseEnter={() => setIsGalleryHovered(true)} onMouseLeave={() => setIsGalleryHovered(false)}>
             <img src={img1} />
-            <p>Sesja lorem ipsum dolor</p>
+            <p>Sesja kategoria1 ipsum dolor</p>
           </div>
           <div className='galleryOption' onMouseEnter={() => setIsGalleryHovered(true)} onMouseLeave={() => setIsGalleryHovered(false)}>
             <img src={img2} />
-            <p>Sesja lorem ipsum dolor</p>
+            <p>Sesja kategoria2 ipsum dolor</p>
           </div>
           <div className='galleryOption' onMouseEnter={() => setIsGalleryHovered(true)} onMouseLeave={() => setIsGalleryHovered(false)}>
             <img src={img3} />
-            <p>Sesja lorem ipsum dolor</p>
+            <p>Sesja kategoria3 ipsum dolor</p>
           </div>
           <div className='galleryOption' onMouseEnter={() => setIsGalleryHovered(true)} onMouseLeave={() => setIsGalleryHovered(false)}>
             <img src={img4} />
-            <p>Sesja lorem ipsum dolor</p>
+            <p>Sesja kategoria4 ipsum dolor</p>
           </div>
           <div className='galleryOption' onMouseEnter={() => setIsGalleryHovered(true)} onMouseLeave={() => setIsGalleryHovered(false)}>
             <img src={img5} />
-            <p>Sesja lorem ipsum dolor</p>
+            <p>Sesja kategoria5 ipsum dolor</p>
           </div>
           <div className='galleryOption' onMouseEnter={() => setIsGalleryHovered(true)} onMouseLeave={() => setIsGalleryHovered(false)}>
             <img src={img6} />
-            <p>Sesja lorem ipsum dolor</p>
+            <p>Sesja kategoria6 ipsum dolor</p>
           </div>
         </div>
       </div>
